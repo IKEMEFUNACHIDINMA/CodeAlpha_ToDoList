@@ -7,3 +7,67 @@ body{
     align-items: center;
     min-height: 30vh;
 }
+
+.container{
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 70%;
+    max-width: 550px;
+}
+
+h1{
+    text-align: center;
+    color: rgb(61, 30, 61);
+}
+
+.item{
+    display: flex;
+    margin: 0 0 20px 10px;
+}
+
+.item input{
+    flex: 1;
+    padding: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.item button{
+    background-color: black;
+    color: whitesmoke;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li{
+    padding: 10px;
+    border-bottom: 1px solid blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul li.done{
+    text-decoration: line-through;
+    color: rgb(71, 71, 13);
+}
+
+ul li button{
+    background-color: whitesmoke;
+    color: black;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
