@@ -1,0 +1,9 @@
+body{
+    font-family: 'harrington', cursive;
+    background-color: rgb(177, 177, 233);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+}
