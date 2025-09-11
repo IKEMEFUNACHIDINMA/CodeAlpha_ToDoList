@@ -20,7 +20,7 @@ function addTask(taskText) {
 
 //Generate unique ID
 function generatedId() {
-    return '_' + Math.random().toString(36).substr(2, 9);
+    return '_' + Math.random().toString(30).substr(2, 9);
 }
 
 //Toggle Task status
@@ -37,6 +37,15 @@ function deleteTask(id) {
     renderTasks();
 }
 
+//Edit Task
+function editTask(id, newText) {
+    tasks = tasks.map(task => task.id === id ? { ...task, text: newText } : task);
+    saveTasks();
+    renderTasks();
+    // console.log('Before Edit:', tasks);
+    // console.log('After Edit:', tasks);
+}
+
 //Render Tasks
 function renderTasks() {
     taskList.innerHTML = ''; //clear existing tasks
@@ -49,8 +58,21 @@ function renderTasks() {
         if (task.completed) {
             li.classList.add('done');
         }
+
         //Toggle task on click
         li.addEventListener('click', () => toggleTask(task.id));
+
+        //Add edit button
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit Task';
+        editBtn.addEventListener('click', () => {
+            const newText = prompt('Edit Task:', task.text);
+            if (newText !== null && newText.trim() !== '') {
+                editTask(task.id, newText.trim());
+            }
+        });
+        li.appendChild(editBtn);
+
         //Add delete button
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete Task';
