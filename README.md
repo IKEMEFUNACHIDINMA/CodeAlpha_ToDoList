@@ -37,5 +37,17 @@ Contributions are welcome! If you have suggestions for improvements or want to r
 
 1. Fork the repository.
 2. Create your feature branch:
-   
+    git checkout -b feature/YourFeatureName 
+3. Commit your changes:
+bash
+   git commit -m 'message'
+4. Push to the branch:
+bash
+   git push origin feature/YourFeatureName
+5. Open a pull request.
+
+
+Feel free to reach out if you have any questions or need assistance!
+
+Happy Organizing your tasks! 🎉
 
