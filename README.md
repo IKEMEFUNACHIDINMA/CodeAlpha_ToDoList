@@ -30,7 +30,7 @@ To get a local copy up and running follow these simple steps.
 5. Filter tasks using the provided options.
 
 ## Demo
-Check out a live demo of the To-Do List Helper here : https://todolist-9wnc.onrender.com
+Check out a live demo of the To-Do List Helper here : http://127.0.0.1:5500/index.html
 
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements or want to report a bug, please create an issue or submit a pull request.
