@@ -23,7 +23,7 @@ To get a local copy up and running follow these simple steps.
 3. Open index.html in your web browser.
 
 ### Usage
-1. Open the application in your browser.
+1. Open the application in your browserusing live server.
 2. Use the input field to add new tasks.
 3. Click on the task to edit or delete it.
 4. Mark tasks as complete by clicking on the task.
