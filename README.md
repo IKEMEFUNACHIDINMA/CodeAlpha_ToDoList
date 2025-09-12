@@ -1,5 +1,6 @@
 # To-Do List Helper
 A simple and intuitive To-Do List Helper that helps you manage your tasks efficiently. Keep track of your daily activities, prioritize tasks, and achieve your goals with ease.
+Deployed now, Check it out on your own browser! : https://todolist-9wnc.onrender.com
 
 ## Features
 - *Add Tasks*: Quickly add new tasks to your to-do list.
@@ -16,9 +17,9 @@ A simple and intuitive To-Do List Helper that helps you manage your tasks effici
 
 ## Getting Started
 To get a local copy up and running follow these simple steps.
-1. Clone the repository:
+1. Clone the repository: https://github.com/IKEMEFUNACHIDINMA/CodeAlpha_ToDoList.git
 2.  Navigate to the project directory:
-    cd
+    cd CodeAlpha
 3. Open index.html in your web browser.
 
 ### Usage
@@ -29,7 +30,7 @@ To get a local copy up and running follow these simple steps.
 5. Filter tasks using the provided options.
 
 ## Demo
-Check out a live demo of the To-Do List Helper here : 
+Check out a live demo of the To-Do List Helper here : https://todolist-9wnc.onrender.com
 
 ## Contributing
 Contributions are welcome! If you have suggestions for improvements or want to report a bug, please create an issue or submit a pull request.
