@@ -39,11 +39,15 @@ function deleteTask(id) {
 
 //Edit Task
 function editTask(id, newText) {
-    tasks = tasks.map(task => task.id === id ? { ...task, text: newText } : task);
+    tasks = tasks.map(task => {
+        if (task.id === id) {
+            //preserve completed status
+            return { ...task, text: newText };
+        }
+        return task;
+    });
     saveTasks();
     renderTasks();
-    // console.log('Before Edit:', tasks);
-    // console.log('After Edit:', tasks);
 }
 
 //Render Tasks
@@ -51,36 +55,49 @@ function renderTasks() {
     taskList.innerHTML = ''; //clear existing tasks
     tasks.forEach(task => {
         const li = document.createElement('li');
-        li.textContent = task.text;
         li.setAttribute('data-id', task.id);
 
-        //Add completed class if task is completed  
+        // Task text span
+        const textSpan = document.createElement('span');
+        textSpan.textContent = task.text;
+        textSpan.style.flex = '1';
+        li.appendChild(textSpan);
+
+        // Add completed class if task is completed
         if (task.completed) {
             li.classList.add('done');
         }
 
-        //Toggle task on click
-        li.addEventListener('click', () => toggleTask(task.id));
+        // Toggle task on click
+        textSpan.addEventListener('click', () => toggleTask(task.id));
 
-        //Add edit button
+        // Edit button
         const editBtn = document.createElement('button');
         editBtn.textContent = 'Edit Task';
-        editBtn.addEventListener('click', () => {
+        editBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent li/text click event
             const newText = prompt('Edit Task:', task.text);
             if (newText !== null && newText.trim() !== '') {
                 editTask(task.id, newText.trim());
             }
         });
-        li.appendChild(editBtn);
 
-        //Add delete button
+        // Delete button
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete Task';
         deleteBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); //Prevent li click event
-            deleteTask(task.id)
+            e.stopPropagation(); // Prevent li/text click event
+            deleteTask(task.id);
         });
-        li.appendChild(deleteBtn);
+
+        // Button container for right alignment
+        const btnContainer = document.createElement('span');
+        btnContainer.style.display = 'flex';
+        btnContainer.style.gap = '5px';
+        btnContainer.appendChild(editBtn);
+        btnContainer.appendChild(deleteBtn);
+        li.appendChild(btnContainer);
+
         taskList.appendChild(li);
     });
 }

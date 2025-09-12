@@ -49,10 +49,10 @@ ul{
 }
 
 ul li{
-    padding: 10px;
+    padding: 8px;
     border-bottom: 1px solid blueviolet;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     cursor: pointer;
     font-family: 'Times New Roman', Times, serif;
